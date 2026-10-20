@@ -9,3 +9,24 @@ services:
     ports:
       - "8000:8000"
     restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../grafana/provisioning:/etc/grafana/provisioning:ro
+      - ../grafana/provisioning/dashboards/heart-disease-api.json:/var/lib/grafana/dashboards/heart-disease-api.json:ro
+    depends_on:
+      - prometheus
+    restart: unless-stopped
