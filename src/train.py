@@ -118,15 +118,16 @@ def main():
 
     # Store experiment metadata in a local SQLite database.
     tracking_db = ROOT / "mlflow.db"
+    mlruns_dir = ROOT / "mlruns"
+    mlruns_dir.mkdir(parents=True, exist_ok=True)
 
     mlflow.set_tracking_uri(
         f"sqlite:///{tracking_db}"
     )
 
-    mlflow.set_experiment(
-        "heart-disease-classification"
-    )
+    experiment_name = "heart-disease-classification-ci"
 
+    mlflow.set_experiment(experiment_name)
     results = []
     best_pipeline = None
     best_model_name = None
