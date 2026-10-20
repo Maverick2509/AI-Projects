@@ -1,0 +1,21 @@
+{
+  "selected_model": "logistic_regression",
+  "feature_columns": [
+    "age",
+    "sex",
+    "cp",
+    "trestbps",
+    "chol",
+    "fbs",
+    "restecg",
+    "thalach",
+    "exang",
+    "oldpeak",
+    "slope",
+    "ca",
+    "thal"
+  ],
+  "selection_metric": "mean cross-validation ROC-AUC",
+  "selection_score": 0.8963053050009572,
+  "target_mapping": "0 = absent, 1 = present; verify against the downloaded dataset variant"
+}
