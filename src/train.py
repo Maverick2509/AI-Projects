@@ -1,12 +1,11 @@
-from pathlib import Path
 import json
+from pathlib import Path
 
 import joblib
 import mlflow
 import mlflow.sklearn
 import numpy as np
 import pandas as pd
-
 from sklearn.compose import ColumnTransformer
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.impute import SimpleImputer
@@ -18,9 +17,9 @@ from sklearn.metrics import (
     roc_auc_score,
 )
 from sklearn.model_selection import (
-    train_test_split,
     StratifiedKFold,
     cross_validate,
+    train_test_split,
 )
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler

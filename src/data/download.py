@@ -1,6 +1,5 @@
 from pathlib import Path
 
-import pandas as pd
 from ucimlrepo import fetch_ucirepo
 
 ROOT = Path(__file__).resolve().parents[2]
